@@ -1,5 +1,7 @@
 import Image from "next/image";
-import MountainSilhouette from "@/components/MountainSilhouette";
+import { Mail } from "lucide-react";
+import MobileMenu from "@/components/MobileMenu";
+import { GitHubIcon, LinkedInIcon } from "@/components/SocialIcons";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const tech = ["Next.js", "React", "TypeScript", "Tailwind"];
@@ -7,27 +9,28 @@ const tech = ["Next.js", "React", "TypeScript", "Tailwind"];
 export default function Home() {
   return (
     <main>
-      <header className="site-header shell">
-        <a className="brand" href="#top" aria-label="Back to top">Phil<span>.</span></a>
-        <nav aria-label="Primary navigation">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-          <ThemeToggle />
-        </nav>
-      </header>
-
       <section className="hero section-shell" id="top">
+        <header className="site-header shell">
+          <a className="brand" href="#top" aria-label="Back to top">Phil<span>.</span></a>
+          <nav aria-label="Primary navigation">
+            <div className="desktop-links">
+              <a href="#work">Work</a>
+              <a href="#about">About</a>
+              <a href="#contact">Contact</a>
+            </div>
+            <MobileMenu />
+            <ThemeToggle />
+          </nav>
+        </header>
+
         <div className="shell hero__content">
           <p className="eyebrow">Ideas → Products</p>
-          <h1>I turn “what if?”<br />into <span>“check this out.”</span></h1>
+          <h1>Good ideas deserve<br /><span>to get built.</span></h1>
           <p className="hero__lede">
-            Hey, I&apos;m Phil. I design and build digital products, websites, and experiences—sometimes from my own ideas,
-            sometimes from someone else&apos;s. Either way, I like figuring out how to make them real.
+            Hey, I&apos;m Phil. I design and build digital products, websites, and experiences. Mostly, I like figuring out how to turn a good idea into something that actually works.
           </p>
-          <a className="button" href="#work">See what I&apos;ve been up to <span>→</span></a>
+          <a className="button" href="#work">See what I&apos;ve been up to</a>
         </div>
-        <MountainSilhouette />
       </section>
 
       <section className="section shell project" id="work">
@@ -40,8 +43,8 @@ export default function Home() {
             No installs. No accounts. No nonsense. Just useful tools that work.
           </p>
           <div className="actions">
-            <a className="button" href="https://tulhive.com" target="_blank" rel="noreferrer">Visit TulHive <span>↗</span></a>
-            <a className="text-link" href="#">View project <span>→</span></a>
+            <a className="button" href="https://tulhive.com" target="_blank" rel="noreferrer">Visit TulHive</a>
+            <a className="text-link" href="#">Read the story</a>
           </div>
           <div className="tech-list" aria-label="Technologies used">
             {tech.map((item) => <span key={item}>{item}</span>)}
@@ -76,21 +79,34 @@ export default function Home() {
       <section className="contact section-shell" id="contact">
         <div className="shell contact__content">
           <p className="eyebrow">Get in touch</p>
-          <h2>Want to say hi?</h2>
-          <p>I&apos;m always up for talking about an interesting idea, something you&apos;re building, or why my garden refuses to cooperate.</p>
-          <a className="button" href="mailto:hello@philipblunk.com">Send me an email <span>→</span></a>
+          <h2>Have something in <span className="contact__nowrap">mind<span className="contact__question">?</span></span></h2>
+          <p>I&apos;m always up for talking through an idea, something you&apos;re building, or just figuring out whether something is worth making.</p>
+          <a className="button" href="mailto:philipblunk@gmail.com">Let&apos;s connect</a>
         </div>
-        <MountainSilhouette compact />
       </section>
 
       <footer className="site-footer shell">
-        <a className="brand" href="#top">Phil<span>.</span></a>
         <div className="footer-links">
-          <a href="https://github.com/pblunk" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="#" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="mailto:hello@philipblunk.com">Email</a>
+          <a href="https://github.com/pblunk" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <GitHubIcon aria-hidden="true" width={17} height={17} />
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/philip-blunk-4bb5222b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <LinkedInIcon aria-hidden="true" width={17} height={17} />
+            <span>LinkedIn</span>
+          </a>
+          <a href="mailto:philipblunk@gmail.com" aria-label="Email Philip">
+            <Mail aria-hidden="true" size={17} strokeWidth={1.9} />
+            <span>Connect</span>
+          </a>
         </div>
-        <p>© 2026 Philip Blunk</p>
+        <div className="footer-meta">
+          <div className="vermont-badge">
+            <span className="vermont-outline" aria-hidden="true" />
+            <span>Built in Vermont</span>
+          </div>
+          <p>© 2026 Philip Blunk</p>
+        </div>
       </footer>
     </main>
   );
