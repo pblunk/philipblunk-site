@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import PageTransition from "@/components/PageTransition";
+import SiteHeader from "@/components/SiteHeader";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -12,7 +14,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>{children}</body>
+      <body>
+        <SiteHeader />
+        <PageTransition>{children}</PageTransition>
+      </body>
     </html>
   );
 }

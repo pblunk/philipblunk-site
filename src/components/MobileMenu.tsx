@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import Link from "next/link";
 
 const links = [
   { href: "#work", label: "Work" },
@@ -8,7 +9,11 @@ const links = [
   { href: "#contact", label: "Contact" },
 ];
 
-export default function MobileMenu() {
+type MobileMenuProps = {
+  links?: typeof links;
+};
+
+export default function MobileMenu({ links: menuLinks = links }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
   const menuId = useId();
   const menuRef = useRef<HTMLDivElement>(null);
@@ -50,10 +55,10 @@ export default function MobileMenu() {
         <span />
       </button>
       <div className="mobile-menu__panel" id={menuId} hidden={!open}>
-        {links.map((link) => (
-          <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
+        {menuLinks.map((link) => (
+          <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
             {link.label}
-          </a>
+          </Link>
         ))}
       </div>
     </div>

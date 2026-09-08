@@ -1,8 +1,6 @@
 import Image from "next/image";
-import { Mail } from "lucide-react";
-import MobileMenu from "@/components/MobileMenu";
-import { GitHubIcon, LinkedInIcon } from "@/components/SocialIcons";
-import ThemeToggle from "@/components/ThemeToggle";
+import Link from "next/link";
+import SiteFooter from "@/components/SiteFooter";
 
 const tech = ["Next.js", "React", "TypeScript", "Tailwind"];
 
@@ -10,26 +8,13 @@ export default function Home() {
   return (
     <main>
       <section className="hero section-shell" id="top">
-        <header className="site-header shell">
-          <a className="brand" href="#top" aria-label="Back to top">Phil<span>.</span></a>
-          <nav aria-label="Primary navigation">
-            <div className="desktop-links">
-              <a href="#work">Work</a>
-              <a href="#about">About</a>
-              <a href="#contact">Contact</a>
-            </div>
-            <MobileMenu />
-            <ThemeToggle />
-          </nav>
-        </header>
-
         <div className="shell hero__content">
           <p className="eyebrow">Ideas → Products</p>
           <h1>Good ideas deserve<br /><span>to get built.</span></h1>
           <p className="hero__lede">
             Hey, I&apos;m Phil. I design and build digital products, websites, and experiences. Mostly, I like figuring out how to turn a good idea into something that actually works.
           </p>
-          <a className="button" href="#work">See what I&apos;ve been up to</a>
+          <Link className="button" href="#work">See what I&apos;ve been up to</Link>
         </div>
       </section>
 
@@ -43,8 +28,8 @@ export default function Home() {
             No installs. No accounts. No nonsense. Just useful tools that work.
           </p>
           <div className="actions">
-            <a className="button" href="https://tulhive.com" target="_blank" rel="noreferrer">Visit TulHive</a>
-            <a className="text-link" href="#">Read the story</a>
+            <a className="button" href="https://tulhive.com" target="_blank" rel="noopener noreferrer">Visit TulHive</a>
+            <Link className="text-link" href="/projects/tulhive">Read the story</Link>
           </div>
           <div className="tech-list" aria-label="Technologies used">
             {tech.map((item) => <span key={item}>{item}</span>)}
@@ -85,29 +70,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="site-footer shell">
-        <div className="footer-links">
-          <a href="https://github.com/pblunk" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <GitHubIcon aria-hidden="true" width={17} height={17} />
-            <span>GitHub</span>
-          </a>
-          <a href="https://www.linkedin.com/in/philip-blunk-4bb5222b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <LinkedInIcon aria-hidden="true" width={17} height={17} />
-            <span>LinkedIn</span>
-          </a>
-          <a href="mailto:philipblunk@gmail.com" aria-label="Email Philip">
-            <Mail aria-hidden="true" size={17} strokeWidth={1.9} />
-            <span>Connect</span>
-          </a>
-        </div>
-        <div className="footer-meta">
-          <div className="vermont-badge">
-            <span className="vermont-outline" aria-hidden="true" />
-            <span>Built in Vermont</span>
-          </div>
-          <p>© 2026 Philip Blunk</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
