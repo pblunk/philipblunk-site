@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Reveal from "@/components/Reveal";
 import SiteFooter from "@/components/SiteFooter";
 
 const stack = ["Next.js", "React", "TypeScript", "Tailwind CSS"];
@@ -37,7 +38,7 @@ export default function TulHiveProjectPage() {
       </section>
 
       <section className="project-showcase shell" aria-label="TulHive product homepage">
-        <figure className="project-showcase__frame">
+        <Reveal as="figure" className="project-showcase__frame" variant="media">
           <Image
             src="/projects/tulhive/homepage.png"
             alt="TulHive homepage showing a warm interface with a collection of browser-based utility tools"
@@ -45,11 +46,11 @@ export default function TulHiveProjectPage() {
             height={968}
             priority
           />
-        </figure>
+        </Reveal>
       </section>
 
       <section className="project-story shell">
-        <div className="project-narrative">
+        <Reveal className="project-narrative">
           <h2>Useful shouldn&apos;t have to mean complicated.</h2>
           <p>
             We&apos;ve all had those little tasks—convert an image, resize a photo, compare two lists—that should take a minute but somehow turn into searching for a website, creating an account, or uploading a file somewhere you don&apos;t really know.
@@ -57,24 +58,24 @@ export default function TulHiveProjectPage() {
           <p>I wanted TulHive to be the opposite of that.</p>
           <p className="project-emphasis">Open the tool. Do the thing. Get your result. Move on.</p>
           <div className="principles-grid" aria-label="Product principles">
-            <div>
+            <Reveal>
               <h3>Simple by default</h3>
               <p>No unnecessary settings or complicated workflows.</p>
-            </div>
-            <div>
+            </Reveal>
+            <Reveal delay={70}>
               <h3>Private by design</h3>
               <p>Process files locally in the browser whenever possible.</p>
-            </div>
-            <div>
+            </Reveal>
+            <Reveal delay={140}>
               <h3>Useful first</h3>
               <p>Build tools around actual everyday problems rather than adding features just to add features.</p>
-            </div>
+            </Reveal>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="project-feature shell">
-        <div className="project-narrative">
+        <Reveal className="project-narrative">
           <p className="project-eyebrow">Image tools</p>
           <h2>Start with one job. Do it well.</h2>
           <p>
@@ -83,57 +84,57 @@ export default function TulHiveProjectPage() {
           <p>
             Each one is designed around a specific task, with as little friction between opening the page and getting the result as possible.
           </p>
-        </div>
+        </Reveal>
         <div className="screenshot-pair screenshot-pair--early">
-          <figure className="product-shot product-shot--large">
+          <Reveal as="figure" className="product-shot product-shot--large" variant="media">
             <Image
               src="/projects/tulhive/heic-converter.png"
               alt="TulHive HEIC Converter tool interface"
               width={1058}
               height={1180}
             />
-          </figure>
-          <figure className="product-shot product-shot--support">
+          </Reveal>
+          <Reveal as="figure" className="product-shot product-shot--support" variant="media" delay={80}>
             <Image
               src="/projects/tulhive/image-resizer.png"
               alt="TulHive Image Resizer tool interface"
               width={1027}
               height={1199}
             />
-          </figure>
+          </Reveal>
         </div>
       </section>
 
       <section className="project-feature project-feature--capable shell">
         <div className="screenshot-pair screenshot-pair--capable">
-          <figure className="product-shot">
+          <Reveal as="figure" className="product-shot" variant="media">
             <Image
               src="/projects/tulhive/compare-two-lists.png"
               alt="TulHive Compare Two Lists tool interface"
               width={1028}
               height={1260}
             />
-          </figure>
-          <figure className="product-shot">
+          </Reveal>
+          <Reveal as="figure" className="product-shot" variant="media" delay={80}>
             <Image
               src="/projects/tulhive/compare-excel-files.png"
               alt="TulHive Compare Excel Files tool interface"
               width={910}
               height={1217}
             />
-          </figure>
+          </Reveal>
         </div>
-        <div className="project-narrative">
+        <Reveal className="project-narrative">
           <p className="project-eyebrow">Data tools</p>
           <h2>Small tools can solve bigger problems, too.</h2>
           <p>
             As TulHive grew, I started applying the same approach to more involved tasks. Compare Two Lists can find matches and differences in pasted data in seconds. Compare Excel Files goes further, comparing records between spreadsheets even when columns aren&apos;t in the same order.
           </p>
           <p className="project-emphasis">The tools became more capable. The goal stayed the same: make the complicated part feel simple.</p>
-        </div>
+        </Reveal>
       </section>
 
-      <section className="project-underhood shell">
+      <Reveal as="section" className="project-underhood shell">
         <div className="project-narrative">
           <p className="project-eyebrow">How it works</p>
           <h2>Under the hood</h2>
@@ -158,9 +159,9 @@ export default function TulHiveProjectPage() {
             </p>
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="project-closing shell">
+      <Reveal as="section" className="project-closing shell">
         <div className="project-narrative">
           <p className="project-eyebrow">What&apos;s next</p>
           <h2>Still building.</h2>
@@ -170,7 +171,7 @@ export default function TulHiveProjectPage() {
           <p>That&apos;s kind of the point.</p>
           <a className="button" href="https://tulhive.com" target="_blank" rel="noopener noreferrer">Visit TulHive</a>
         </div>
-      </section>
+      </Reveal>
 
       <SiteFooter />
     </main>

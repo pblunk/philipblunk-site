@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 import SiteFooter from "@/components/SiteFooter";
 
 const tech = ["Next.js", "React", "TypeScript", "Tailwind"];
@@ -19,7 +20,7 @@ export default function Home() {
       </section>
 
       <section className="section shell project" id="work">
-        <div className="project__copy">
+        <Reveal className="project__copy">
           <p className="eyebrow">Featured project</p>
           <h2>TulHive</h2>
           <p className="subhead">Simple tools for everyday tasks.</p>
@@ -34,19 +35,19 @@ export default function Home() {
           <div className="tech-list" aria-label="Technologies used">
             {tech.map((item) => <span key={item}>{item}</span>)}
           </div>
-        </div>
+        </Reveal>
 
-        <div className="browser-frame" aria-label="TulHive homepage preview">
+        <Reveal className="browser-frame" variant="media" delay={70} aria-label="TulHive homepage preview">
           <div className="browser-frame__bar"><i /><i /><i /><span>tulhive.com</span></div>
           <Image src="/images/tulhive-home.png" alt="TulHive homepage showing its browser-based utility tools" width={1298} height={1152} priority={false} />
-        </div>
+        </Reveal>
       </section>
 
       <section className="section shell about" id="about">
-        <div className="about__photo">
+        <Reveal className="about__photo" variant="media">
           <Image src="/images/phil.jpg" alt="Phil outdoors with mountains in the background" width={1152} height={2048} />
-        </div>
-        <div className="about__copy">
+        </Reveal>
+        <Reveal className="about__copy" delay={70}>
           <p className="eyebrow">About me</p>
           <h2>Hey, I&apos;m <span>Phil.</span></h2>
           <p>
@@ -58,16 +59,16 @@ export default function Home() {
           <p>
             Away from the screen, I&apos;m a self-proclaimed beekeeper apprentice, amateur gardener, adventurous eater, and frequent traveler. Results vary—especially in the garden—but I&apos;m having a good time.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <section className="contact section-shell" id="contact">
-        <div className="shell contact__content">
+        <Reveal className="shell contact__content">
           <p className="eyebrow">Get in touch</p>
           <h2>Have something in <span className="contact__nowrap">mind<span className="contact__question">?</span></span></h2>
           <p>I&apos;m always up for talking through an idea, something you&apos;re building, or just figuring out whether something is worth making.</p>
           <a className="button" href="mailto:philipblunk@gmail.com">Let&apos;s connect</a>
-        </div>
+        </Reveal>
       </section>
 
       <SiteFooter />
