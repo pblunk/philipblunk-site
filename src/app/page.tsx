@@ -3,7 +3,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import SiteFooter from "@/components/SiteFooter";
 
-const tech = ["Next.js", "React", "TypeScript", "Tailwind"];
+const tech = ["Next.js", "React", "TypeScript", "Tailwind CSS"];
 
 export default function Home() {
   return (
@@ -32,6 +32,7 @@ export default function Home() {
             <a className="button" href="https://tulhive.com" target="_blank" rel="noopener noreferrer">Visit TulHive</a>
             <Link className="text-link" href="/projects/tulhive">Read the story</Link>
           </div>
+          <p className="project-eyebrow">Built with</p>
           <div className="tech-list" aria-label="Technologies used">
             {tech.map((item) => <span key={item}>{item}</span>)}
           </div>
