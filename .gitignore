@@ -4,3 +4,6 @@ out
 .env*
 .DS_Store
 .vercel
+/dist/
+.vinext/
+.wrangler/
