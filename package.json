@@ -36,5 +36,8 @@
     "vite": "^8.2.2",
     "wrangler": "^4.130.0"
   },
-  "type": "module"
+  "type": "module",
+  "optionalDependencies": {
+    "@rolldown/binding-openharmony-arm64": "^1.2.8"
+  }
 }
