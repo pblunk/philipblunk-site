@@ -3,6 +3,7 @@
 import { useEffect, useRef, useSyncExternalStore } from "react";
 import type { MouseEvent } from "react";
 import { flushSync } from "react-dom";
+import { Moon, Sun } from "lucide-react";
 
 type Theme = "dark" | "light";
 type ViewTransitionLike = {
@@ -34,6 +35,7 @@ function subscribeToTheme(callback: () => void) {
 export default function ThemeToggle() {
   const theme = useSyncExternalStore(subscribeToTheme, getStoredTheme, getServerTheme);
   const transitioningRef = useRef(false);
+  const Icon = theme === "dark" ? Sun : Moon;
 
   useEffect(() => {
     if (document.documentElement.dataset.theme !== theme) {
@@ -147,7 +149,7 @@ export default function ThemeToggle() {
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
       title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
     >
-      {theme === "dark" ? "☀" : "☾"}
+      <Icon aria-hidden="true" focusable="false" size={20} strokeWidth={1.9} />
     </button>
   );
 }

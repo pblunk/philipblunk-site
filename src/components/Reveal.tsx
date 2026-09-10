@@ -1,7 +1,7 @@
 "use client";
 
 import type { CSSProperties, HTMLAttributes, ReactNode } from "react";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type RevealProps = HTMLAttributes<HTMLElement> & {
   as?: "div" | "section" | "figure";
@@ -20,17 +20,23 @@ export default function Reveal({
   ...props
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
+  const [element, setObservedElement] = useState<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
   const revealClassName = `reveal reveal--${variant}${visible ? " is-visible" : ""}${className ? ` ${className}` : ""}`;
   const revealStyle = { "--reveal-delay": `${delay}ms`, ...style } as CSSProperties;
 
-  function setElement(element: HTMLElement | null) {
+  const setElement = useCallback((element: HTMLElement | null) => {
     ref.current = element;
-  }
+    setObservedElement(element);
+  }, []);
 
   useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
+    if (!element || visible) return;
+
+    if (!("IntersectionObserver" in window)) {
+      const timeout = globalThis.setTimeout(() => setVisible(true), 0);
+      return () => globalThis.clearTimeout(timeout);
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -46,7 +52,7 @@ export default function Reveal({
 
     observer.observe(element);
     return () => observer.disconnect();
-  }, []);
+  }, [element, visible]);
 
   if (Component === "section") {
     return <section ref={setElement} className={revealClassName} style={revealStyle} {...props}>{children}</section>;

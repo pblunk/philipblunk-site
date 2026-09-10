@@ -6,7 +6,7 @@ import SiteFooter from "@/components/SiteFooter";
 const stack = ["Next.js", "React", "TypeScript", "Tailwind CSS"];
 
 export const metadata: Metadata = {
-  title: "TulHive | Philip Blunk",
+  title: "TulHive | Phil Blunk",
   description:
     "A project story about TulHive, a collection of fast, privacy-friendly browser tools built by Philip Blunk.",
   alternates: { canonical: "/projects/tulhive" },
@@ -53,9 +53,11 @@ export default function TulHiveProjectPage() {
         <Reveal className="project-narrative">
           <h2>Useful shouldn&apos;t have to mean complicated.</h2>
           <p>
-            We&apos;ve all had those little tasks—convert an image, resize a photo, compare two lists—that should take a minute but somehow turn into searching for a website, creating an account, or uploading a file somewhere you don&apos;t really know.
+            We&apos;ve all had those little tasks—convert an image, resize a photo, compare two lists—that should take a minute but somehow turn into hunting for the right website, clicking through pop-ups, or figuring out a tool that&apos;s trying to do way more than you need.
           </p>
-          <p>I wanted TulHive to be the opposite of that.</p>
+          <p>
+            TulHive grew out of that frustration. Instead of building one big application, I started creating focused tools around those small moments—each designed to solve one problem and get out of the way.
+          </p>
           <p className="project-emphasis">Open the tool. Do the thing. Get your result. Move on.</p>
           <div className="principles-grid" aria-label="Product principles">
             <Reveal>
@@ -139,7 +141,7 @@ export default function TulHiveProjectPage() {
           <p className="project-eyebrow">How it works</p>
           <h2>Under the hood</h2>
           <p>
-            TulHive is built as a modern browser-based application, with an emphasis on doing as much work on the user&apos;s device as possible. That keeps many tools fast and means files don&apos;t need to make a round trip to a server just to get a simple job done.
+            A lot of what TulHive does happens right in the browser. Rather than sending every task off to a server, many of the tools use the capabilities already available on the user&apos;s device to do the work.
           </p>
         </div>
         <div className="project-stack-wrap">
@@ -152,10 +154,10 @@ export default function TulHiveProjectPage() {
           <div className="project-narrative project-narrative--support">
             <h3>Your files stay with you.</h3>
             <p>
-              Whenever possible, TulHive processes files and data directly in the browser. That means a file you&apos;re converting, resizing, or comparing doesn&apos;t need to be uploaded to a TulHive server first.
+              For tools like image conversion, resizing, and data comparison, processing happens locally whenever possible. The browser does the work instead of sending the file to a TulHive server.
             </p>
             <p>
-              It&apos;s better for privacy, and for a lot of these tools, it&apos;s simply the more sensible way to build them.
+              That approach keeps the experience fast, but more importantly, it means files don&apos;t need to leave the user&apos;s device just to complete a simple task.
             </p>
           </div>
         </div>
