@@ -40,7 +40,7 @@ export default function Home() {
 
         <Reveal className="browser-frame" variant="media" delay={70} aria-label="TulHive homepage preview">
           <div className="browser-frame__bar"><i /><i /><i /><span>tulhive.com</span></div>
-          <Image src="/images/tulhive-home.png" alt="TulHive homepage showing its browser-based utility tools" width={1298} height={1152} priority={false} />
+          <Image src="/images/tulhive-home.webp" alt="TulHive homepage with tool search, category filters, and browser-based utility tools" width={1298} height={1152} priority={false} />
         </Reveal>
       </section>
 

@@ -40,8 +40,8 @@ export default function TulHiveProjectPage() {
       <section className="project-showcase shell" aria-label="TulHive product homepage">
         <Reveal as="figure" className="project-showcase__frame" variant="media">
           <Image
-            src="/projects/tulhive/homepage.png"
-            alt="TulHive homepage showing a warm interface with a collection of browser-based utility tools"
+            src="/projects/tulhive/homepage.webp"
+            alt="TulHive homepage with tool search, category filters, and browser-based utility tools"
             width={1059}
             height={968}
             priority
@@ -90,16 +90,16 @@ export default function TulHiveProjectPage() {
         <div className="screenshot-pair screenshot-pair--early">
           <Reveal as="figure" className="product-shot product-shot--large" variant="media">
             <Image
-              src="/projects/tulhive/heic-converter.png"
-              alt="TulHive HEIC Converter tool interface"
+              src="/projects/tulhive/heic-converter.webp"
+              alt="TulHive HEIC Converter with a private HEIC and HEIF photo upload area"
               width={1058}
               height={1180}
             />
           </Reveal>
           <Reveal as="figure" className="product-shot product-shot--support" variant="media" delay={80}>
             <Image
-              src="/projects/tulhive/image-resizer.png"
-              alt="TulHive Image Resizer tool interface"
+              src="/projects/tulhive/image-resizer.webp"
+              alt="TulHive Image Resizer with a loaded mountain image, dimension controls, and aspect ratio option"
               width={1027}
               height={1199}
             />
@@ -111,16 +111,16 @@ export default function TulHiveProjectPage() {
         <div className="screenshot-pair screenshot-pair--capable">
           <Reveal as="figure" className="product-shot" variant="media">
             <Image
-              src="/projects/tulhive/compare-two-lists.png"
-              alt="TulHive Compare Two Lists tool interface"
+              src="/projects/tulhive/compare-two-lists.webp"
+              alt="TulHive Compare Two Lists showing sample lists and matching, differing, and unique items"
               width={1028}
               height={1260}
             />
           </Reveal>
           <Reveal as="figure" className="product-shot" variant="media" delay={80}>
             <Image
-              src="/projects/tulhive/compare-excel-files.png"
-              alt="TulHive Compare Excel Files tool interface"
+              src="/projects/tulhive/compare-excel-files.webp"
+              alt="TulHive Compare Excel Files with sample inventory workbooks, worksheet selectors, and key column controls"
               width={910}
               height={1217}
             />
